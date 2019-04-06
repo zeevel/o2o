@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeevel.o2o.dao.ShopDao">
+    <insert id="insertShop" useGeneratedKeys="true" keyColumn="shop_id" keyProperty="shopId">
+      INSERT INTO
+      tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,
+      phone,shop_img,priority,create_time,last_edit_time,enable_status,advice)
+      VALUES
+      (#{owner.userId},#{area.areaId},#{shopCategory.shopCategoryId},#{shopName},
+      #{shopDesc},#{shopAddr},#{phone},#{shopImg},#{priority},#{createTime},#{lastEditTime},
+      #{enableStatus},#{advice})
+    </insert>
+    <update id="updateShop" parameterType="com.zeevel.o2o.entity.Shop">
+        UPDATE tb_shop
+        <set>
+            <if test="shopName!=null">shop_name=#{shopName},</if>
+            <if test="shopDesc!=null">shop_desc=#{shopDesc},</if>
+            <if test="shopAddr!=null">shop_addr=#{shopAddr},</if>
+            <if test="phone!=null">phone=#{phone},</if>
+            <if test="shopImg!=null">shop_img=#{shopImg},</if>
+            <if test="priority!=null">priority=#{priority},</if>
+            <if test="lastEditTime!=null">last_edit_time=#{lastEditTime},</if>
+            <if test="enableStatus!=null">enable_status=#{enableStatus},</if>
+            <if test="advice!=null">advice=#{advice},</if>
+            <if test="area!=null">area_id=#{area.areaId},</if>
+            <if test="shopCategory!=null">shop_category_id=#{shopCategory.shopCategoryId}</if>
+        </set>
+        WHERE shop_id=#{shopId}
+    </update>
+    <resultMap id="shopMap" type="com.zeevel.o2o.entity.Shop">
+        <id column="shop_id" property="shopId"/>
+        <result column="shop_name" property="shopName"/>
+        <result column="shop_desc" property="shopDesc"/>
+        <result column="shop_addr" property="shopAddr"/>
+        <result column="phone" property="phone"/>
+        <result column="shop_img" property="shopImg"/>
+        <result column="s_priority" property="priority"/>
+        <result column="s_create_time" property="createTime"/>
+        <result column="s_last_edit_time" property="lastEditTime"/>
+        <result column="s_enable_status" property="enableStatus"/>
+        <result column="advice" property="advice"/>
+        <association property="area" javaType="com.zeevel.o2o.entity.Area">
+            <id column="area_id" property="areaId"/>
+            <result column="area_name" property="areaName"/>
+            <result column="area_desc" property="areaDesc"/>
+            <result column="a_priority" property="priority"/>
+            <result column="a_create_time" property="createTime"/>
+            <result column="a_last_edit_time" property="lastEditTime"/>
+        </association>
+        <association property="shopCategory" javaType="com.zeevel.o2o.entity.ShopCategory">
+            <id column="shop_category_id" property="shopCategoryId"/>
+            <result column="shop_category_name" property="shopCategoryName"/>
+            <result column="shop_category_desc" property="shopCategoryDesc"/>
+            <result column="shop_category_img" property="shopCategoryImg"/>
+            <result column="sc_priority" property="priority"/>
+            <result column="sc_create_time" property="createTime"/>
+            <result column="sc_last_edit_time" property="lastEditTime"/>
+        </association>
+        <association column="owner_id" property="owner" javaType="com.zeevel.o2o.entity.PersonInfo">
+            <id column="user_id" property="userId"/>
+            <result column="name" property="name"/>
+            <result column="profile_img" property="profileImg"/>
+            <result column="email" property="email"/>
+            <result column="gender" property="gender"/>
+            <result column="p_enable_status" property="enableStatus"/>
+            <result column="user_type" property="userType"/>
+            <result column="p_create_time" property="createTime"/>
+            <result column="p_last_edit_time" property="lastEditTime"/>
+        </association>
+    </resultMap>
+    <select id="queryByShopId" resultMap="shopMap" parameterType="Long">
+        <!-- 具体的sql -->
+        SELECT
+        s.shop_id,
+        s.shop_name,
+        s.shop_desc,
+        s.shop_addr,
+        s.phone,
+        s.shop_img,
+        s.priority AS s_priority,
+        s.create_time as s_create_time,
+        s.last_edit_time as s_last_edit_time,
+        s.enable_status as s_enable_status,
+        a.area_id,
+        a.area_name,
+        a.area_desc,
+        a.priority as a_priority,
+        a.create_time as a_create_time,
+        a.last_edit_time as a_last_edit_time,
+        sc.shop_category_id,
+        sc.shop_category_name,
+        sc.shop_category_desc,
+        sc.shop_category_img,
+        sc.priority as sc_priority,
+        sc.create_time as sc_create_time,
+        sc.last_edit_time as sc_last_edit_time,
+        p.user_id,
+        p.name,
+        p.profile_img,
+        p.email,
+        p.gender,
+        p.enable_status as p_enable_status,
+        p.user_type,
+        p.create_time as p_create_time,
+        p.last_edit_time as p_last_edit_time
+        FROM
+        tb_shop s
+        LEFT JOIN tb_area a ON s.area_id = a.area_id
+        LEFT JOIN tb_shop_category sc ON s.shop_category_id = sc.shop_category_id
+        LEFT JOIN tb_person_info p ON s.owner_id = p.user_id
+        WHERE
+        shop_id = #{shopId}
+    </select>
+    <select id="queryShopList" resultMap="shopMap">
+        SELECT
+        s.shop_id,
+        s.shop_name,
+        s.shop_desc,
+        s.shop_addr,
+        s.phone,
+        s.shop_img,
+        s.priority AS s_priority,
+        s.create_time as s_create_time,
+        s.last_edit_time as s_last_edit_time,
+        s.enable_status as s_enable_status,
+        a.area_id,
+        a.area_name,
+        a.area_desc,
+        a.priority as a_priority,
+        a.create_time as a_create_time,
+        a.last_edit_time as a_last_edit_time,
+        sc.shop_category_id,
+        sc.shop_category_name,
+        sc.shop_category_desc,
+        sc.shop_category_img,
+        sc.priority as sc_priority,
+        sc.create_time as sc_create_time,
+        sc.last_edit_time as sc_last_edit_time,
+        p.user_id,
+        p.name,
+        p.profile_img,
+        p.email,
+        p.gender,
+        p.enable_status as p_enable_status,
+        p.user_type,
+        p.create_time as p_create_time,
+        p.last_edit_time as p_last_edit_time
+        FROM
+        tb_shop s
+        LEFT JOIN tb_area a ON s.area_id = a.area_id
+        LEFT JOIN tb_shop_category sc ON s.shop_category_id = sc.shop_category_id
+        LEFT JOIN tb_person_info p ON s.owner_id = p.user_id
+        <where>
+            <if test="shopCondition.shopId!=null">
+                and s.shop_id = #{shopCondition.shopId}
+            </if>
+            <if test="shopCondition.shopCategory!=null and shopCondition.shopCategory.shopCategoryId!=null">
+                and s.shop_category_id =#{shopCondition.shopCategory.shopCategoryId}
+            </if>
+            <if test="shopCondition.area!=null and shopCondition.area.areaId!=null">
+                and s.area_id = #{shopCondition.area.areaId}
+            </if>
+            <!-- 写like语句的时候 一般都会写成 like '% %' 在mybatis里面写就是应该是 like '%${name} %' 而不是
+                '%#{name} %' ${name} 是不带单引号的，而#{name} 是带单引号的 -->
+            <if test="shopCondition.shopName!=null">
+                and s.shop_name like '%${shopCondition.shopName}%'
+            </if>
+            <if test="shopCondition.enableStatus!=null">
+                and s.enable_status = #{shopCondition.enableStatus}
+            </if>
+            <if test="shopCondition.owner!=null and shopCondition.owner.userId!=null">
+                and s.owner_id = #{shopCondition.owner.userId}
+            </if>
+        </where>
+        ORDER BY
+        s.priority DESC
+        LIMIT #{rowIndex},#{pageSize};
+    </select>
+    <select id="queryShopCount" resultType="int">
+        SELECT
+        count(1)
+        FROM
+        tb_shop s
+        LEFT JOIN tb_area a ON s.area_id = a.area_id
+        LEFT JOIN tb_shop_category sc ON s.shop_category_id = sc.shop_category_id
+        LEFT JOIN tb_person_info p ON s.owner_id = p.user_id
+        <where>
+            <if test="shopCondition.shopId!=null">
+                and s.shop_id = #{shopCondition.shopId}
+            </if>
+            <if test="shopCondition.shopCategory!=null and shopCondition.shopCategory.shopCategoryId!=null">
+                and s.shop_category_id =#{shopCondition.shopCategory.shopCategoryId}
+            </if>
+            <if test="shopCondition.area!=null and shopCondition.area.areaId!=null">
+                and s.area_id = #{shopCondition.area.areaId}
+            </if>
+            <if test="shopCondition.owner!=null and shopCondition.owner.userId!=null">
+                and s.owner_id = #{shopCondition.owner.userId}
+            </if>
+            <!-- 写like语句的时候 一般都会写成 like '% %' 在mybatis里面写就是应该是 like '%${name} %' 而不是
+                '%#{name} %' ${name} 是不带单引号的，而#{name} 是带单引号的 -->
+            <if test="shopCondition.shopName!=null">
+                and s.shop_name like '%${shopCondition.shopName}%'
+            </if>
+            <if test="shopCondition.enableStatus!=null">
+                and s.enable_status = #{shopCondition.enableStatus}
+            </if>
+        </where>
+    </select>
+</mapper>
