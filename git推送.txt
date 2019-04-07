@@ -1,0 +1,5 @@
+git add .
+git commit -m '...'
+git remote rm orign
+git remote add orign ...
+git push -u orign master
