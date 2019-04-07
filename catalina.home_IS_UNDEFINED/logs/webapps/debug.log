@@ -4,3 +4,10 @@
 2019-04-07 11:17:07.251[main] DEBUG com.zeevel.o2o.web.superadmin.AreaController - current relativeAddr is:\upload\item\shop\33\2019040711170751451.jpg
 2019-04-07 11:17:07.252[main] DEBUG com.zeevel.o2o.web.superadmin.AreaController - current complete addr is:D:\projectdev\image\upload\item\shop\33\2019040711170751451.jpg
 2019-04-07 11:17:07.252[main] DEBUG com.zeevel.o2o.web.superadmin.AreaController - basePath is:/D:/%e6%af%95%e4%b8%9a%e8%ae%be%e8%ae%a1/%e5%8d%95%e4%bd%93%e5%ba%94%e7%94%a8%e5%a4%8d%e4%b9%a0/o2o/target/test-classes/
+2019-04-07 15:31:46.564[main] DEBUG com.zeevel.o2o.web.superadmin.AreaController - current relativeAddr is:\upload\item\shop\1\2019040715314639919.png
+2019-04-07 15:31:46.565[main] DEBUG com.zeevel.o2o.web.superadmin.AreaController - current complete addr is:D:\projectdev\image\upload\item\shop\1\2019040715314639919.png
+2019-04-07 15:31:46.565[main] DEBUG com.zeevel.o2o.web.superadmin.AreaController - basePath is:/D:/%e6%af%95%e4%b8%9a%e8%ae%be%e8%ae%a1/%e5%8d%95%e4%bd%93%e5%ba%94%e7%94%a8%e5%a4%8d%e4%b9%a0/o2o/target/test-classes/
+2019-04-07 15:31:47.126[main] DEBUG com.zeevel.o2o.web.superadmin.AreaController - current relativeAddr is:\upload\item\shop\1\2019040715314718183.png
+2019-04-07 15:31:47.127[main] DEBUG com.zeevel.o2o.web.superadmin.AreaController - current complete addr is:D:\projectdev\image\upload\item\shop\1\2019040715314718183.png
+2019-04-07 15:31:47.265[main] DEBUG com.zeevel.o2o.web.superadmin.AreaController - current relativeAddr is:\upload\item\shop\1\2019040715314767928.png
+2019-04-07 15:31:47.265[main] DEBUG com.zeevel.o2o.web.superadmin.AreaController - current complete addr is:D:\projectdev\image\upload\item\shop\1\2019040715314767928.png

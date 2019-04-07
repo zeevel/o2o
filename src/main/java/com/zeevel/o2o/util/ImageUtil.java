@@ -40,6 +40,24 @@ public class ImageUtil {
         return relativeAddr;
     }
 
+    public static String generateNormalImg(ImageHolder thumbnail,String targetAddr){
+        String realFileName = getRandomFileName();
+        String extension = getFileExtension(thumbnail.getImageName());
+        makeDirPath(targetAddr);
+        String relativeAddr = targetAddr + realFileName + extension;
+        logger.debug("current relativeAddr is:" + relativeAddr);
+        File dest = new File(PathUtil.getImgBasePath() + relativeAddr);
+        logger.debug("current complete addr is:" + PathUtil.getImgBasePath() + relativeAddr);
+        try{
+            Thumbnails.of(thumbnail.getImage()).size(337, 640)
+                    .outputQuality(0.9f).toFile(dest);
+        }catch (IOException e){
+            logger.error(e.toString());
+            throw new RuntimeException("创建详情图片失败: " + e.toString());
+        }
+        return relativeAddr;
+    }
+
     /**
      * 生成随机文件名，当前年月日小时分钟秒钟+5位随机数
      * @return
