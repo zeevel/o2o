@@ -40,4 +40,32 @@ public class ProductDaoTest extends BaseTest {
         assertEquals(1,effectedNum);
     }
 
+    @Test
+    public void testQueryProductByProductId(){
+        Product product = productDao.queryProductByProductId(1L);
+        System.out.println(product);
+    }
+
+    @Test
+    public void testUpdateProduct(){
+        Product product = new Product();
+
+        Shop shop = new Shop();
+        shop.setShopId(1L);
+        product.setShop(shop);
+        ProductCategory productCategory = new ProductCategory();
+        productCategory.setProductCategoryId(1L);
+        product.setProductCategory(productCategory);
+
+        product.setProductId(1L);
+        product.setProductName("测试商品1");
+        product.setProductDesc("测试商品1描述");
+        product.setLastEditTime(new Date());
+        product.setNormalPrice("100");
+        product.setPromotionPrice("80");
+
+        int res = productDao.updateProduct(product);
+        assertEquals(1,res);
+    }
+
 }

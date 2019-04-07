@@ -37,4 +37,10 @@ public class ProductImgDaoTest extends BaseTest {
         assertEquals(2,effectedNum);
     }
 
+    @Test
+    public void testDelete(){
+        int res = productImgDao.deleteProductImgByProductId(1L);
+        assertEquals(2,res);
+    }
+
 }

@@ -18,4 +18,6 @@ public interface ProductService {
      */
     ProductExecution addProduct(Product product, ImageHolder thumbnail,
                                 List<ImageHolder> productImgHolderList) throws RuntimeException;
+
+    Product getProductById(Long productId);
 }

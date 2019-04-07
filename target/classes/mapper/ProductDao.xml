@@ -15,4 +15,107 @@
       #{lastEditTime},#{enableStatus},#{productCategory.productCategoryId},
       #{shop.shopId})
     </insert>
+    <resultMap id="productMap" type="com.zeevel.o2o.entity.Product">
+      <id column="product_id" property="productId"/>
+      <result column="product_name" property="productName"/>
+      <result column="product_desc" property="productDesc"/>
+      <result column="img_addr" property="imgAddr"/>
+      <result column="normal_price" property="normalPrice"/>
+      <result column="promotion_price" property="promotionPrice"/>
+      <result column="p_priority" property="priority"/>
+      <result column="p_create_time" property="createTime" />
+      <result column="p_last_edit_time" property="lastEditTime" />
+      <result column="p_enable_status" property="enableStatus" />
+      <association property="productCategory" javaType="com.zeevel.o2o.entity.ProductCategory">
+        <id column="product_category_id" property="productCategoryId"/>
+        <result column="shop_id" property="shopId"/>
+        <result column="product_category_name" property="productCategoryName"/>
+        <result column="pc_priority" property="priority"/>
+        <result column="pc_create_time" property="createTime"/>
+      </association>
+      <association property="shop" javaType="com.zeevel.o2o.entity.Shop">
+        <id column="shop_id" property="shopId"/>
+        <result column="shop_name" property="shopName"/>
+        <result column="shop_desc" property="shopDesc"/>
+        <result column="shop_addr" property="shopAddr"/>
+        <result column="phone" property="phone"/>
+        <result column="shop_img" property="shopImg"/>
+        <result column="s_priority" property="priority"/>
+        <result column="s_create_time" property="createTime"/>
+        <result column="s_last_edit_time" property="lastEditTime"/>
+        <result column="s_enable_status" property="enableStatus"/>
+        <result column="advice" property="advice"/>
+      </association>
+      <collection property="productImgList" ofType="com.zeevel.o2o.entity.ProductImg"
+                  column="product_id">
+        <id column="product_img_id" property="productImgId"/>
+        <result column="img_addr" property="imgAddr"/>
+        <result column="img_desc" property="imgDesc"/>
+        <result column="pi_priority" property="priority"/>
+        <result column="pi_create_time" property="createTime"/>
+        <result column="product_id" property="productId"/>
+      </collection>
+    </resultMap>
+    <select id="queryProductByProductId" parameterType="Long"
+            resultMap="productMap">
+      SELECT
+        p.product_id,
+        p.product_name,
+        p.product_desc,
+        p.img_addr,
+        p.normal_price,
+        p.promotion_price,
+        p.priority as p_priority,
+        p.create_time as p_create_time,
+        p.last_edit_time as p_last_edit_time,
+        p.enable_status as p_enable_status,
+        s.shop_id,
+        s.shop_name,
+        s.shop_desc,
+        s.shop_addr,
+        s.phone,
+        s.shop_img,
+        s.priority as s_priority,
+        s.create_time as s_create_time,
+        s.last_edit_time as s_last_edit_time,
+        s.enable_status as s_enable_status,
+        s.advice,
+        pc.product_category_id,
+        pc.product_category_name,
+        pc.priority as pc_priority,
+        pc.create_time as pc_create_time,
+        pi.product_img_id,
+        pi.img_addr,
+        pi.img_desc,
+        pi.priority as pi_priority,
+        pi.create_time as pi_create_time
+      FROM
+      tb_product p
+      LEFT JOIN tb_product_category pc ON p.product_category_id = pc.product_category_id
+      LEFT JOIN tb_shop s ON p.shop_id = s.shop_id
+      LEFT JOIN tb_product_img pi ON p.product_id = pi.product_id
+      WHERE
+      p.product_id = #{productId}
+      ORDER BY
+      pi.priority DESC
+    </select>
+    <update id="updateProduct" parameterType="com.zeevel.o2o.entity.Product"
+            keyProperty="productId" useGeneratedKeys="true">
+      UPDATE tb_product
+      <set>
+        <if test="productName!=null">product_name=#{productName},</if>
+        <if test="productDesc!=null">product_desc=#{productDesc},</if>
+        <if test="imgAddr!=null">img_adr=#{imgAddr},</if>
+        <if test="normalPrice!=null">normal_price=#{normalPrice},</if>
+        <if test="promotionPrice!=null">promotion_price=#{promotionPrice},</if>
+        <if test="priority!=null">priority=#{priority},</if>
+        <if test="lastEditTime!=null">last_edit_time=#{lastEditTime},</if>
+        <if test="enableStatus!=null">enable_status=#{enableStatus},</if>
+        <if test="productCategory!=null and productCategory.productCategoryId!=null">
+          product_category_id=#{productCategory.productCategoryId}
+        </if>
+      </set>
+      WHERE product_id=#{productId}
+      AND shop_id=#{shop.shopId}
+    </update>
 </mapper>
