@@ -1,6 +1,7 @@
 package com.zeevel.o2o.service;
 
 import com.zeevel.o2o.BaseTest;
+import com.zeevel.o2o.dto.ImageHolder;
 import com.zeevel.o2o.dto.ShopExecution;
 import com.zeevel.o2o.entity.Area;
 import com.zeevel.o2o.entity.PersonInfo;
@@ -36,7 +37,7 @@ public class ShopServiceTest extends BaseTest {
         shop.setOwner(owner);
         shop.setArea(area);
         shop.setShopCategory(shopCategory);
-        shop.setShopName("测试的店铺");
+        shop.setShopName("测试的店铺test");
         shop.setShopDesc("test");
         shop.setShopAddr("test");
         shop.setPhone("test");
@@ -46,7 +47,8 @@ public class ShopServiceTest extends BaseTest {
         shop.setAdvice("审核中");
         File shopImg = new File("C:/Users/Administrator/Desktop/xiaohuang.jpg");
         InputStream is = new FileInputStream(shopImg);
-        ShopExecution se = shopService.addShop(shop,is,shopImg.getName());
+        ImageHolder thumbnail = new ImageHolder(shopImg.getName(),is);
+        ShopExecution se = shopService.addShop(shop, thumbnail);
         assertEquals(ShopStateEnum.CHECK.getState(),se.getState());
     }
 
@@ -63,12 +65,13 @@ public class ShopServiceTest extends BaseTest {
     @Test
     public void testModifyShop() throws Exception{
         Shop shop = new Shop();
-        shop.setShopId(1L);
+        shop.setShopId(33L);
         shop.setShopName("修改后的店铺名称");
 
         File shopImg = new File("C:/Users/Administrator/Desktop/xjpic.jpg");
         InputStream is = new FileInputStream(shopImg);
-        ShopExecution shopExecution = shopService.modifyShop(shop, is, "dabai.jpg");
+        ImageHolder thumbnail = new ImageHolder(shopImg.getName(),is);
+        ShopExecution shopExecution = shopService.modifyShop(shop, thumbnail);
         System.out.println("新的图片地址为：" +shopExecution.getShop().getShopImg());
     }
 

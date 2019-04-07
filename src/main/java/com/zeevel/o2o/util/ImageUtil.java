@@ -1,5 +1,6 @@
 package com.zeevel.o2o.util;
 
+import com.zeevel.o2o.dto.ImageHolder;
 import com.zeevel.o2o.web.superadmin.AreaController;
 import net.coobird.thumbnailator.Thumbnails;
 import net.coobird.thumbnailator.geometry.Positions;
@@ -21,9 +22,9 @@ public class ImageUtil {
     private static Random r = new Random();
     private static Logger logger = LoggerFactory.getLogger(AreaController.class);
 
-    public static String generateThumbnail(InputStream thumbnailInputStream,String fileName, String targetAddr){
+    public static String generateThumbnail(ImageHolder thumbnail, String targetAddr){
         String realFileName = getRandomFileName();
-        String extension = getFileExtension(fileName);
+        String extension = getFileExtension(thumbnail.getImageName());
         makeDirPath(targetAddr);
         String relativeAddr = targetAddr + realFileName + extension;
         logger.debug("current relativeAddr is:" + relativeAddr);
@@ -31,7 +32,7 @@ public class ImageUtil {
         logger.debug("current complete addr is:" + PathUtil.getImgBasePath() + relativeAddr);
         logger.debug("basePath is:" + basePath);
         try{
-            Thumbnails.of(thumbnailInputStream).size(200, 200)
+            Thumbnails.of(thumbnail.getImage()).size(200, 200)
                     .outputQuality(0.25f).toFile(dest);
         } catch (IOException e) {
             e.printStackTrace();

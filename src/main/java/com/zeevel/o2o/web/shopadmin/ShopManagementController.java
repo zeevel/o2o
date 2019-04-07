@@ -1,6 +1,7 @@
 package com.zeevel.o2o.web.shopadmin;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.zeevel.o2o.dto.ImageHolder;
 import com.zeevel.o2o.dto.ShopExecution;
 import com.zeevel.o2o.entity.Area;
 import com.zeevel.o2o.entity.PersonInfo;
@@ -71,11 +72,15 @@ public class ShopManagementController {
         }
         //2.注册店铺
         if(shop!=null&&shopImg!=null){
-            PersonInfo owner = (PersonInfo) request.getSession().getAttribute("user");
+            //Session TODO
+//            PersonInfo owner = (PersonInfo) request.getSession().getAttribute("user");
+            PersonInfo owner = new PersonInfo();
+            owner.setUserId(1L);
             shop.setOwner(owner);
             ShopExecution se = null;
             try {
-                se = shopService.addShop(shop,shopImg.getInputStream(),shopImg.getOriginalFilename());
+                ImageHolder thumbnail = new ImageHolder(shopImg.getOriginalFilename(),shopImg.getInputStream());
+                se = shopService.addShop(shop,thumbnail);
                 if(se.getState()== ShopStateEnum.CHECK.getState()){
                     modelMap.put("success",true);
                     //该用户可以操作的店铺了表
@@ -150,14 +155,16 @@ public class ShopManagementController {
         //修改店铺信息
         if(shop!=null&&shop.getShopId()!=null){
             //Session TODO
-            PersonInfo owner = (PersonInfo) request.getSession().getAttribute("user");
+            PersonInfo owner = new PersonInfo();
+            owner.setUserId(1L);
             shop.setOwner(owner);
             ShopExecution se;
             try{
                 if(shopImg == null){
-                    se = shopService.modifyShop(shop,null,null);//不修改图片
+                    se = shopService.modifyShop(shop,null);//不修改图片
                 }else{
-                    se = shopService.modifyShop(shop,shopImg.getInputStream(),shopImg.getOriginalFilename());
+                    ImageHolder thumbnail = new ImageHolder(shopImg.getOriginalFilename(),shopImg.getInputStream());
+                    se = shopService.modifyShop(shop,thumbnail);
                 }
                 if(se.getState()==ShopStateEnum.SUCCESS.getState()){
                     modelMap.put("success",true);
