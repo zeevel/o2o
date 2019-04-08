@@ -20,4 +20,7 @@ public interface ProductService {
                                 List<ImageHolder> productImgHolderList) throws RuntimeException;
 
     Product getProductById(Long productId);
+
+    ProductExecution modifyProduct(Product product,ImageHolder thumbnail,List<ImageHolder> productImgHolderList)
+        throws RuntimeException;
 }

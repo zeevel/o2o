@@ -19,4 +19,6 @@ public interface ProductImgDao {
      * @return
      */
     int deleteProductImgByProductId(Long productId);
+
+    List<ProductImg> queryProductImgList(Long productId);
 }

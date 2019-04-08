@@ -105,7 +105,7 @@
       <set>
         <if test="productName!=null">product_name=#{productName},</if>
         <if test="productDesc!=null">product_desc=#{productDesc},</if>
-        <if test="imgAddr!=null">img_adr=#{imgAddr},</if>
+        <if test="imgAddr!=null">img_addr=#{imgAddr},</if>
         <if test="normalPrice!=null">normal_price=#{normalPrice},</if>
         <if test="promotionPrice!=null">promotion_price=#{promotionPrice},</if>
         <if test="priority!=null">priority=#{priority},</if>

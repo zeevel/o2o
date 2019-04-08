@@ -24,4 +24,25 @@
         WHERE
         product_id = #{productId}
     </delete>
+    <resultMap id="productImgMap" type="com.zeevel.o2o.entity.ProductImg">
+        <id column="product_img_id" property="productImgId"/>
+        <result column="img_addr" property="imgAddr"/>
+        <result column="img_desc" property="imgDesc"/>
+        <result column="priority" property="priority"/>
+        <result column="create_time" property="createTime"/>
+        <result column="product_id" property="productId"/>
+    </resultMap>
+    <select id="queryProductImgList" resultMap="productImgMap">
+        SELECT
+        product_img_id,
+        img_addr,
+        img_desc,
+        priority,
+        create_time,
+        product_id
+        FROM
+        tb_product_img
+        WHERE
+        product_id=#{productId}
+    </select>
 </mapper>

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.multipart.MultipartRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
@@ -129,6 +130,50 @@ public class ProductManagementController {
             modelMap.put("errMsg","empty pageSize or pageIndex or shopId");
         }
         return modelMap;
+    }
+
+    @RequestMapping(value = "/modifyproduct",method = RequestMethod.POST)
+    @ResponseBody
+    private Map<String,Object> modifyProduct(HttpServletRequest request){
+        Map<String,Object>modelMap = new HashMap<>();
+        boolean statusChange = HttpServletRequestUtil.getBoolean(request,"statusChange");
+        if(!statusChange&&!CodeUtil.checkVerifyCode(request)){
+            modelMap.put("success",false);
+            modelMap.put("errMsg","输入了错误的验证码");
+            return modelMap;
+        }
+        //接受前端参数变量的初始化,
+        ObjectMapper mapper = new ObjectMapper();
+        Product product = null;
+        ImageHolder thumbnail = null;
+        List<ImageHolder> productImgList = new ArrayList<>();
+        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(
+                request.getSession().getServletContext());
+        try {
+            if (multipartResolver.isMultipart(request)) {
+                MultipartRequest multipartRequest = (MultipartHttpServletRequest) request;
+                CommonsMultipartFile thumbnailFile = (CommonsMultipartFile) multipartRequest.getFile("thumbnail");
+                if(thumbnailFile!=null){
+                    thumbnail = new ImageHolder(thumbnailFile.getOriginalFilename(),thumbnailFile.getInputStream());
+                }
+                for(int i=0;i<IMAGEMAXCOUNT;i++){
+                    CommonsMultipartFile productImgFile = (CommonsMultipartFile)
+                            multipartRequest.getFile("productImg" + i);
+                    if(productImgFile!=null){
+                        ImageHolder productImg = new ImageHolder(productImgFile.getOriginalFilename(),
+                                productImgFile.getInputStream());
+                        productImgList.add(productImg);
+                    }
+                    else{
+                        break;
+                    }
+                }
+            }
+        }catch (Exception e){
+            modelMap.put("success",false);
+            modelMap.put("erMsg",e.toString());
+        }
+        return null;
     }
 
 }
