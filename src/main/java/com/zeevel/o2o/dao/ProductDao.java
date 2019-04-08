@@ -2,6 +2,7 @@ package com.zeevel.o2o.dao;
 
 import com.zeevel.o2o.entity.Product;
 import com.zeevel.o2o.entity.ProductImg;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -28,4 +29,11 @@ public interface ProductDao {
      */
     int updateProduct(Product product);
 
+    List<Product> queryProductList(@Param("productCondition") Product productCondition,
+                                   @Param("rowIndex") int rowIndex,
+                                   @Param("pageSize") int pageSize);
+
+    int queryProductCount(@Param("productCondition") Product productCondition);
+
+    int updateProductCategoryToNull(Long productCategoryId);
 }
