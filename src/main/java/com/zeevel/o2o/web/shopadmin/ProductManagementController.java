@@ -23,6 +23,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -154,17 +155,16 @@ public class ProductManagementController {
                 MultipartRequest multipartRequest = (MultipartHttpServletRequest) request;
                 CommonsMultipartFile thumbnailFile = (CommonsMultipartFile) multipartRequest.getFile("thumbnail");
                 if(thumbnailFile!=null){
-                    thumbnail = new ImageHolder(thumbnailFile.getOriginalFilename(),thumbnailFile.getInputStream());
+                    thumbnail = new ImageHolder(thumbnailFile.getOriginalFilename(),
+                            thumbnailFile.getInputStream());
                 }
                 for(int i=0;i<IMAGEMAXCOUNT;i++){
-                    CommonsMultipartFile productImgFile = (CommonsMultipartFile)
-                            multipartRequest.getFile("productImg" + i);
-                    if(productImgFile!=null){
-                        ImageHolder productImg = new ImageHolder(productImgFile.getOriginalFilename(),
-                                productImgFile.getInputStream());
+                    CommonsMultipartFile productImgFile = (CommonsMultipartFile) multipartRequest
+                            .getFile("productImg" + i);
+                    if(productImgFile != null){
+                        ImageHolder productImg = new ImageHolder(productImgFile.getOriginalFilename(),productImgFile.getInputStream());
                         productImgList.add(productImg);
-                    }
-                    else{
+                    }else{
                         break;
                     }
                 }
@@ -172,8 +172,40 @@ public class ProductManagementController {
         }catch (Exception e){
             modelMap.put("success",false);
             modelMap.put("erMsg",e.toString());
+            return modelMap;
         }
-        return null;
+        try{
+            String productStr = HttpServletRequestUtil.getString(request,"productStr");
+            product = mapper.readValue(productStr,Product.class);
+        }catch (Exception e){
+            modelMap.put("success",false);
+            modelMap.put("erMsg",e.toString());
+            return modelMap;
+        }
+        if(product!=null){
+            try{
+                Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
+                Shop shop = new Shop();
+                shop.setShopId(currentShop.getShopId());
+                product.setShop(shop);
+                ProductExecution pe = productService.modifyProduct(product,thumbnail,productImgList);
+                if(pe.getState()== ProductStateEnum.SUCCESS.getState()){
+                    modelMap.put("success",true);
+                }else{
+                    modelMap.put("success",false);
+                    modelMap.put("errMsg",pe.getStateInfo());
+                }
+            }catch (RuntimeException e){
+                modelMap.put("success",false);
+                modelMap.put("errMsg",e.toString());
+                return modelMap;
+            }
+        }else{
+            modelMap.put("success",false);
+            modelMap.put("errMsg","请输入商品信息");
+        }
+        return modelMap;
     }
+
 
 }
