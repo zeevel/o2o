@@ -12,13 +12,10 @@ function getQueryString(name){
 $(function(){
     var shopId = getQueryString('shopId');
     var isEdit = shopId ? true : false;
-    console.log("shopId: " + shopId);
-    console.log("isEdit: " + isEdit);
     var initUrl = '/o2o/shopadmin/getshopinitinfo';
     var registerShopUrl = '/o2o/shopadmin/registershop';
     var shopInfoUrl = "/o2o/shopadmin/getshopbyid?shopId=" + shopId;
     var editShopUrl = '/o2o/shopadmin/modifyshop';
-    alert(initUrl);
     if(!isEdit){
         getShopInitInfo();
     }else{

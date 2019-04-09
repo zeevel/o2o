@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -66,6 +67,27 @@ public class ProductDaoTest extends BaseTest {
 
         int res = productDao.updateProduct(product);
         assertEquals(1,res);
+    }
+
+    @Test
+    public void testQueryProductListAndCount(){
+        Product productCondition = new Product();
+        List<Product> productList = productDao.queryProductList(productCondition, 0, 3);
+        System.out.println(productList.size());
+        int count = productDao.queryProductCount(productCondition);
+        System.out.println(count);
+
+        productCondition.setProductName("测试");
+        productList = productDao.queryProductList(productCondition,0,3);
+        System.out.println(productList.size());
+        count = productDao.queryProductCount(productCondition);
+        System.out.println(count);
+    }
+
+    @Test
+    public void testUpdateProductCategoryToNull(){
+        int effectedNum = productDao.updateProductCategoryToNull(2L);
+        assertEquals(1,effectedNum);
     }
 
 }
