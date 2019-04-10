@@ -105,7 +105,7 @@ $(function(){
                       $.toast('提交成功！');
                       $('#captcha_img').click();
                   }else{
-                      $.toast('提交失败!');
+                      $.toast(data.errMsg);
                       $('#captcha_img').click();
                   }
               }
