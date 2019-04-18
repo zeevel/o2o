@@ -7,14 +7,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="874ee7af-392b-4437-a375-cd35c1e04089" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/dao/PersonInfoDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/dao/WechatAuthDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/PersonInfoDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/WechatAuthDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/zeevel/o2o/dao/PersonInfoDaoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/zeevel/o2o/dao/WechatAuthDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/entity/PersonInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/entity/PersonInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/entity/WechatAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/entity/WechatAuth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/dto/WechatAuthExecution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/enums/WechatAuthStateEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/service/PersonInfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/service/WechatAuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/service/impl/PersonInfoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/service/impl/WechatAuthServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/util/DESUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/util/EncryptPropertyPlaceholderConfigurer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/zeevel/o2o/service/impl/WechatAuthServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/util/weixin/WechatUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/util/weixin/WechatUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/web/wechat/WechatLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/web/wechat/WechatLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zeevel/o2o/util/weixin/WechatUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zeevel/o2o/util/weixin/WechatUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zeevel/o2o/web/wechat/WechatLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zeevel/o2o/web/wechat/WechatLoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/o2o.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/o2o.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/o2o/WEB-INF/classes/com/zeevel/o2o/entity/PersonInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/o2o/WEB-INF/classes/com/zeevel/o2o/entity/PersonInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/o2o/WEB-INF/classes/com/zeevel/o2o/entity/WechatAuth.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/o2o/WEB-INF/classes/com/zeevel/o2o/entity/WechatAuth.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/o2o/WEB-INF/classes/com/zeevel/o2o/util/weixin/WechatUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/o2o/WEB-INF/classes/com/zeevel/o2o/util/weixin/WechatUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/o2o/WEB-INF/classes/com/zeevel/o2o/web/wechat/WechatLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/o2o/WEB-INF/classes/com/zeevel/o2o/web/wechat/WechatLoginController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -64,30 +74,12 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/dao/PersonInfoDao.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/util/DESUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="18" column="24" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/dao/WechatAuthDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/zeevel/o2o/dao/WechatAuthDaoTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
-              <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+            <state relative-caret-position="152">
+              <caret line="47" column="58" lean-forward="true" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -95,20 +87,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PersonInfoDao.xml">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/util/EncryptPropertyPlaceholderConfigurer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
+            <state relative-caret-position="77">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/WechatAuthDao.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+            <state relative-caret-position="75">
+              <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -121,8 +113,8 @@
         <option value="spring-beans.schema" />
         <option value="Interface" />
         <option value="HTML File" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -158,15 +150,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/shop/shopoperation.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/service/ProductService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/service/impl/ProductServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/web/shopadmin/ProductManagementController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/shop/productmanagement.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/web/shopadmin/ShopAdminController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shopmanage.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/productmanagement.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/dao/ProductDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/ProductDao.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/zeevel/o2o/dao/ProductDaoTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/service/impl/ProductCategoryServiceImpl.java" />
@@ -199,8 +182,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/dto/UserAccessToken.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/dto/WechatUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/util/weixin/MyX509TrustManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/util/weixin/WechatUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/web/wechat/WechatLoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/dao/PersonInfoDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/dao/WechatAuthDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/PersonInfoDao.xml" />
@@ -209,6 +190,17 @@
         <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/entity/PersonInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/entity/WechatAuth.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/zeevel/o2o/dao/WechatAuthDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/enums/WechatAuthStateEnum.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/dto/WechatAuthExecution.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/service/WechatAuthService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/zeevel/o2o/service/impl/WechatAuthServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/service/PersonInfoService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/service/impl/PersonInfoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/util/weixin/WechatUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/service/impl/WechatAuthServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/web/wechat/WechatLoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/util/DESUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zeevel/o2o/util/EncryptPropertyPlaceholderConfigurer.java" />
       </list>
     </option>
   </component>
@@ -252,7 +244,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="width" value="977" />
     <option name="height" value="1038" />
@@ -305,7 +297,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="o2o" type="b2602c69:ProjectViewProjectNode" />
@@ -313,14 +305,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="o2o" type="b2602c69:ProjectViewProjectNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -335,7 +319,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555494847822" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555579033865" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="database.console.LAST_STATE" value="false" />
@@ -350,14 +334,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.zeevel.o2o.service.impl" />
       <recent name="com.zeevel.o2o.dao" />
       <recent name="com.zeevel.o2o.service" />
-      <recent name="com.zeevel.o2o.service.impl" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\毕业设计\单体应用复习\o2o\src\main\webapp\WEB-INF\html\frontend" />
       <recent name="D:\毕业设计\单体应用复习\o2o\src\main\java\com\zeevel\o2o\enums" />
       <recent name="D:\毕业设计\单体应用复习\o2o\src\main\java\com\zeevel\o2o\dto" />
+      <recent name="D:\毕业设计\单体应用复习\o2o\src\main\webapp\WEB-INF\html\frontend" />
       <recent name="D:\毕业设计\单体应用复习\o2o\src\main\webapp\WEB-INF\html\shop" />
       <recent name="D:\毕业设计\单体应用复习\o2o\src\main\webapp\resources\js\common" />
     </key>
@@ -380,51 +364,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.WechatAuthDaoTest.testQueryWechatAuthByOpenId">
-    <configuration name="JacksonDatabindTest.testJackson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.DESUtil">
+    <configuration name="DESUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zeevel.o2o.util.DESUtil" />
       <module name="o2o" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zeevel.o2o.dao.*" />
+          <option name="PATTERN" value="com.zeevel.o2o.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.zeevel.o2o.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.zeevel.o2o.dao.JacksonDatabindTest" />
-      <option name="METHOD_NAME" value="testJackson" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersonInfoDaoTest.testInsertPersonInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EncryptPropertyPlaceholderConfigurer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zeevel.o2o.util.EncryptPropertyPlaceholderConfigurer" />
       <module name="o2o" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zeevel.o2o.dao.*" />
+          <option name="PATTERN" value="com.zeevel.o2o.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.zeevel.o2o.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.zeevel.o2o.dao.PersonInfoDaoTest" />
-      <option name="METHOD_NAME" value="testInsertPersonInfo" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PersonInfoDaoTest.testQueryPersonInfoById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="o2o" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zeevel.o2o.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.zeevel.o2o.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.zeevel.o2o.dao.PersonInfoDaoTest" />
-      <option name="METHOD_NAME" value="testQueryPersonInfoById" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -472,6 +434,22 @@
       <option name="PACKAGE_NAME" value="com.zeevel.o2o.dao" />
       <option name="MAIN_CLASS_NAME" value="com.zeevel.o2o.dao.WechatAuthDaoTest" />
       <option name="METHOD_NAME" value="testQueryWechatAuthByOpenId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WechatAuthServiceImplTest.testRegister" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="o2o" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zeevel.o2o.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zeevel.o2o.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.zeevel.o2o.service.impl.WechatAuthServiceImplTest" />
+      <option name="METHOD_NAME" value="testRegister" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -670,21 +648,21 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.ProductServiceTest.testModifyProduct" />
-      <item itemvalue="JUnit.JacksonDatabindTest.testJackson" />
-      <item itemvalue="Remote.Unnamed" />
-      <item itemvalue="Tomcat Server.o2o" />
-      <item itemvalue="JUnit.PersonInfoDaoTest.testInsertPersonInfo" />
-      <item itemvalue="JUnit.PersonInfoDaoTest.testQueryPersonInfoById" />
       <item itemvalue="JUnit.WechatAuthDaoTest.testInsertWechatAuth" />
       <item itemvalue="JUnit.WechatAuthDaoTest.testQueryWechatAuthByOpenId" />
+      <item itemvalue="JUnit.WechatAuthServiceImplTest.testRegister" />
+      <item itemvalue="Remote.Unnamed" />
+      <item itemvalue="Tomcat Server.o2o" />
+      <item itemvalue="Application.EncryptPropertyPlaceholderConfigurer" />
+      <item itemvalue="Application.DESUtil" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DESUtil" />
+        <item itemvalue="Application.EncryptPropertyPlaceholderConfigurer" />
+        <item itemvalue="JUnit.WechatAuthServiceImplTest.testRegister" />
         <item itemvalue="JUnit.WechatAuthDaoTest.testQueryWechatAuthByOpenId" />
         <item itemvalue="JUnit.WechatAuthDaoTest.testInsertWechatAuth" />
-        <item itemvalue="JUnit.PersonInfoDaoTest.testQueryPersonInfoById" />
-        <item itemvalue="JUnit.PersonInfoDaoTest.testInsertPersonInfo" />
-        <item itemvalue="JUnit.JacksonDatabindTest.testJackson" />
       </list>
     </recent_temporary>
   </component>
@@ -718,26 +696,13 @@
       <workItem from="1555307895946" duration="13000" />
       <workItem from="1555322352943" duration="8947000" />
       <workItem from="1555397188173" duration="10389000" />
-      <workItem from="1555481542468" duration="7348000" />
+      <workItem from="1555481542468" duration="10333000" />
+      <workItem from="1555513880367" duration="863000" />
+      <workItem from="1555573449410" duration="3611000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ShopCategoryDaoTest_testQueryShopCategory2 - 2019.04.08 at 20h 20m 01s.xml">
-      <configuration name="ShopCategoryDaoTest.testQueryShopCategory2" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ShopDaoTest_testQueryShopList2 - 2019.04.09 at 16h 35m 47s.xml">
-      <configuration name="ShopDaoTest.testQueryShopList2" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ShopDaoTest_testQueryShopList2 - 2019.04.09 at 16h 48m 46s.xml">
-      <configuration name="ShopDaoTest.testQueryShopList2" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ShopDaoTest_testQueryShopList2 - 2019.04.09 at 17h 15m 39s.xml">
-      <configuration name="ShopDaoTest.testQueryShopList2" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="JacksonDatabindTest_testJackson - 2019.04.15 at 20h 49m 38s.xml">
-      <configuration name="JacksonDatabindTest.testJackson" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="JacksonDatabindTest_testJackson - 2019.04.15 at 20h 50m 24s.xml">
       <configuration name="JacksonDatabindTest.testJackson" configurationId="JUnit" />
     </history-entry>
@@ -753,9 +718,24 @@
     <history-entry file="WechatAuthDaoTest_testInsertWechatAuth - 2019.04.17 at 17h 50m 14s.xml">
       <configuration name="WechatAuthDaoTest.testInsertWechatAuth" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="WechatAuthDaoTest_testQueryWechatAuthByOpenId - 2019.04.17 at 17h 53m 03s.xml">
+      <configuration name="WechatAuthDaoTest.testQueryWechatAuthByOpenId" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WechatAuthServiceImplTest_testRegister - 2019.04.17 at 21h 37m 04s.xml">
+      <configuration name="WechatAuthServiceImplTest.testRegister" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WechatAuthServiceImplTest_testRegister - 2019.04.17 at 21h 37m 46s.xml">
+      <configuration name="WechatAuthServiceImplTest.testRegister" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WechatAuthServiceImplTest_testRegister - 2019.04.17 at 23h 17m 48s.xml">
+      <configuration name="WechatAuthServiceImplTest.testRegister" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WechatAuthServiceImplTest_testRegister - 2019.04.18 at 16h 10m 33s.xml">
+      <configuration name="WechatAuthServiceImplTest.testRegister" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213409000" />
+    <option name="totallyTimeSpent" value="220868000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -767,10 +747,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-6" y="0" width="781" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49858356" weight="0.39812332" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49858356" weight="0.2766252" />
       <window_info id="Structure" order="1" sideWeight="0.50141644" side_tool="true" weight="0.2761394" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" side_tool="true" />
@@ -781,15 +761,15 @@
       <window_info id="Web" order="8" sideWeight="0.5007072" side_tool="true" weight="0.16756032" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49731904" visible="true" weight="0.5127479" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49798927" weight="0.3252149" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49731904" visible="true" weight="0.34813753" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49798927" weight="0.47592068" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32808024" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49932975" weight="0.713881" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50268096" side_tool="true" weight="0.49716714" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49865952" weight="0.32152975" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49865952" weight="0.3209169" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" sideWeight="0.49932975" weight="0.32956153" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.3295129" />
@@ -900,94 +880,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shoplist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-720" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="135" column="52" lean-forward="true" selection-start-line="135" selection-start-column="52" selection-end-line="135" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/zeevel/o2o/dao/ShopDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="100" column="53" lean-forward="true" selection-start-line="100" selection-start-column="53" selection-end-line="100" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/service/impl/ShopServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1631">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/dao/ShopDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/dao/ShopCategoryDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="15" column="40" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/web/frontend/MainPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="25" column="44" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/frontend/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="36" column="40" selection-end-line="45" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/service/ProductCategoryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/web/frontend/FrontendController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="15" column="65" lean-forward="true" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#515#516#0" expanded="true" />
-            <element signature="e#557#558#0" expanded="true" />
-            <element signature="e#684#685#0" expanded="true" />
-            <element signature="e#708#709#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/web/frontend/ShopListController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-143">
-          <caret line="73" column="39" selection-start-line="73" selection-start-column="30" selection-end-line="73" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/web/frontend/ShopDetailController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -1258,26 +1150,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/util/weixin/WechatUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-983">
-          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/web/wechat/WechatLoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/AreaDao.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -1323,20 +1195,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/entity/PersonInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="101" column="20" lean-forward="true" selection-start-line="101" selection-start-column="20" selection-end-line="101" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/entity/WechatAuth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="48" column="46" lean-forward="true" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/dao/WechatAuthDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -1344,27 +1202,156 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/WechatAuthDao.xml">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zeevel/o2o/dao/WechatAuthDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+        <state relative-caret-position="41">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/enums/WechatAuthStateEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-244" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/dto/WechatAuthExecution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-544">
+          <caret line="25" column="41" lean-forward="true" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/entity/WechatAuth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/service/impl/PersonInfoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#438#439#0" expanded="true" />
+            <element signature="e#465#466#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/service/PersonInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/util/weixin/WechatUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="179" column="26" selection-start-line="179" selection-start-column="26" selection-end-line="179" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PersonInfoDao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
+        <state relative-caret-position="503">
           <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/zeevel/o2o/dao/WechatAuthDaoTest.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.1.5.RELEASE/spring-aop-5.1.5.RELEASE.jar!/org/springframework/aop/support/AopUtils.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+        <state relative-caret-position="113">
+          <caret line="193" selection-start-line="193" selection-end-line="193" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zeevel/o2o/service/impl/WechatAuthServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="653">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/WechatAuthDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="43" column="28" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/service/WechatAuthService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="16" column="32" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/entity/PersonInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/service/impl/WechatAuthServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="813">
+          <caret line="46" column="26" lean-forward="true" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/web/wechat/WechatLoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="41" column="48" lean-forward="true" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/util/DESUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="47" column="58" lean-forward="true" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zeevel/o2o/util/EncryptPropertyPlaceholderConfigurer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>

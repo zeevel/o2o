@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zeevel.o2o.dto.UserAccessToken;
 import com.zeevel.o2o.dto.WechatUser;
+import com.zeevel.o2o.entity.PersonInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -168,5 +169,14 @@ public class WechatUtil {
             log.error("https request error:{}", e);
         }
         return buffer.toString();
+    }
+
+    public static PersonInfo getPersonInfoFromRequest(WechatUser user){
+        PersonInfo personInfo = new PersonInfo();
+        personInfo.setName(user.getNickName());
+        personInfo.setGender(user.getSex() + "");
+        personInfo.setProfileImg(user.getHeadimgurl());
+        personInfo.setEnableStatus(1);
+        return personInfo;
     }
 }
